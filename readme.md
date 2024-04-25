@@ -1,4 +1,4 @@
-#Simple e-commerce backend api with nest js
+Simple e-commerce backend api with nest js
 
 ## 1. Getting started
 
