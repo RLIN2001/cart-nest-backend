@@ -14,6 +14,7 @@ export class PaymentService {
   async processPayment(
     userId,
     orderId,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     paymentRequestDto: PaymentRequestDto,
   ): Promise<PaymentResponseDto> {
     const order = await this.orderService.getOrderById(userId, orderId);

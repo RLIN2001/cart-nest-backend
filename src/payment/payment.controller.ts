@@ -4,7 +4,7 @@ import { PaymentRequestDto } from './dtos/payment-request.dto';
 import { AuthGuard } from '../guard/auth.guard';
 
 interface PaymentRequest {
-  paymentRequestDto?: PaymentRequestDto;
+  paymentRequest?: PaymentRequestDto;
   orderId?: string;
 }
 @Controller('payment')
@@ -20,9 +20,9 @@ export class PaymentsController {
     const user = req['user'];
 
     return this.paymentsService.processPayment(
-      user.user._id,
+      user._id,
       paymentRequest.orderId,
-      paymentRequest.paymentRequestDto,
+      paymentRequest.paymentRequest,
     );
   }
 }

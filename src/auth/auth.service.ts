@@ -22,6 +22,7 @@ export class AuthService {
     if (user?.password !== password) {
       throw new Error('Invalid password');
     }
+
     const payload = {
       ...user,
     };

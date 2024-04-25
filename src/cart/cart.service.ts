@@ -37,10 +37,11 @@ export class CartService {
 
   async findCartById(userId: string, cartId: string): Promise<Cart> {
     const cart = await this.cartModel.findById(cartId);
-    if (cart && cart.user.toString() !== userId)
+    if ((cart && cart.user && cart.user.toString() !== userId) || !cart.user) {
       throw new UnauthorizedException(
         'You are not authorized to get this cart',
       );
+    }
     return cart;
   }
 

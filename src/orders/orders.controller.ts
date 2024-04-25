@@ -34,7 +34,7 @@ export class OrdersController {
         HttpStatus.BAD_REQUEST,
       );
     const user = req['user'];
-    const order = await this.ordersService.getOrderById(user.user._id, id);
+    const order = await this.ordersService.getOrderById(user._id, id);
 
     if (!order) {
       throw new HttpException('Order not found', HttpStatus.NOT_FOUND);
@@ -63,7 +63,7 @@ export class OrdersController {
     const user = req['user'];
 
     const createdOrder = await this.ordersService.createOrder(
-      user.user._id.toString(),
+      user._id.toString(),
       createOrderDto,
     );
 

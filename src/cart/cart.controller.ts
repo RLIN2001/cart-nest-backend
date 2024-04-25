@@ -27,7 +27,7 @@ export class CartController {
   @Get('user')
   async getCartsByUser(@Req() req: Request, @Res() res: Response) {
     const user = req['user'];
-    const carts = await this.cartService.getCartsByUserId(user.user._id);
+    const carts = await this.cartService.getCartsByUserId(user._id);
 
     return res.status(HttpStatus.OK).json({
       message: 'Carts retrieved successfully',
@@ -53,7 +53,7 @@ export class CartController {
   ) {
     const user = req['user'];
     const newCart: Cart = await this.cartService.createCart(
-      user.user._id,
+      user._id,
       CartItemDto,
     );
 
@@ -72,10 +72,7 @@ export class CartController {
   ) {
     const user = req['user'];
 
-    const cart = await this.cartService.findCartById(
-      user.user._id.toString(),
-      cartId,
-    );
+    const cart = await this.cartService.findCartById(user._id, cartId);
     if (!cart) {
       throw new HttpException('Cart not found', HttpStatus.NOT_FOUND);
     }
@@ -96,7 +93,7 @@ export class CartController {
     const user = req['user'];
 
     const deletedCart = await this.cartService.deleteCart(
-      user.user._id.toString(),
+      user._id.toString(),
       cartId,
     );
     if (!deletedCart) {
@@ -119,7 +116,7 @@ export class CartController {
   ) {
     const user = req['user'];
     const updatedCart = await this.cartService.updateCart(
-      user.user._id.toString(),
+      user._id,
       cartId,
       updateCartDto,
     );

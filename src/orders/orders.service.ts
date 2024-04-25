@@ -24,7 +24,10 @@ export class OrdersService {
   async getOrderById(userId: string, id: string): Promise<Order> {
     const order = await this.orderModel.findById(id);
 
-    if (order && order.user.toString() !== userId)
+    if (
+      (order && order.user && order.user.toString() !== userId) ||
+      !order.user
+    )
       throw new UnauthorizedException(
         'You are not authorized to get this order',
       );

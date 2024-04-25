@@ -16,7 +16,7 @@ export class UsersService {
     try {
       const user = await this.userModel.findOne(queryParams);
 
-      return user;
+      return user.toObject();
     } catch (error) {
       throw error;
     }
