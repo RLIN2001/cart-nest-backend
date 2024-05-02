@@ -139,6 +139,11 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
+
+## 4. Postman API Documentation
+
+You can explore and test our API endpoints using Postman. Click [here](https://elements.getpostman.com/redirect?entityId=30123063-5adba42c-fc3c-4c84-a224-2eb6d17010e2&entityType=collection) to view the Postman API documentation.
+
 ## 5. Built with 🛠️
 
 This project is build with:
