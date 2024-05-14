@@ -10,7 +10,7 @@ Before starting, make sure you have at least those components on your workstatio
 
 ### 1.2 Project configuration
 
-Start by cloning this project on your workstation or click on ["Use this template"](https://github.com/RLIN2001/cart-backend-nest.git) in Github.
+Start by cloning this project on your workstation in Github.
 
 ```sh
 git clone https://github.com/RLIN2001/cart-backend-nest.git my-project
